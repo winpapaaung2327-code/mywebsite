@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse Bean Boutique's full selection of single-origin and blended coffees with search and filter.">
+  <title>Coffee Selection | Bean Boutique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast__icon">&#9745;</span>
+    <span class="toast__text"></span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Bean Boutique Home">
+        <span class="header__logo-icon">&#9749;</span>
+        <span class="header__logo-text">Bean <span>Boutique</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="coffee.html" class="nav__link nav__link--active">Coffee</a></li>
+          <li><a href="equipment.html" class="nav__link">Equipment</a></li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="offers.html" class="nav__link">Offers</a></li>
+          <li>
+            <a href="cart.html" class="nav__link nav__cart-link" aria-label="Shopping cart">
+              Cart
+              <span class="nav__cart-badge nav__cart-badge--hidden">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button id="navToggle" class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div id="navMobile" class="nav__mobile" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="nav__mobile-list">
+        <li><a href="index.html" class="nav__mobile-link">Home</a></li>
+        <li><a href="coffee.html" class="nav__mobile-link nav__mobile-link--active">Coffee</a></li>
+        <li><a href="equipment.html" class="nav__mobile-link">Equipment</a></li>
+        <li><a href="events.html" class="nav__mobile-link">Events</a></li>
+        <li><a href="offers.html" class="nav__mobile-link">Offers</a></li>
+        <li><a href="cart.html" class="nav__mobile-link">Cart</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="page-header" aria-labelledby="coffeePageTitle">
+      <div class="container">
+        <h1 id="coffeePageTitle" class="page-header__title">Coffee Selection</h1>
+        <p class="page-header__desc">Explore our curated collection of single-origin and blended coffees, roasted to perfection.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Coffee catalog">
+      <div class="container">
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <span class="search-bar__icon">&#128269;</span>
+          <label for="coffeeSearch" class="form-label" style="display:none;">Search coffee</label>
+          <input type="text" id="coffeeSearch" class="search-bar__input" placeholder="Search by name..." aria-label="Search coffee by name">
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-bar" role="group" aria-label="Filter coffees">
+          <button class="filter-btn filter-btn--active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="single-origin">Single Origin</button>
+          <button class="filter-btn" data-filter="blend">Blend</button>
+          <button class="filter-btn" data-filter="light">Light Roast</button>
+          <button class="filter-btn" data-filter="medium">Medium Roast</button>
+          <button class="filter-btn" data-filter="dark">Dark Roast</button>
+          <button class="filter-btn" data-filter="Non-coffee">Non-coffee</button>
+          <button class="filter-btn" data-filter="dessert">dessert</button>
+        </div>
+
+        <!-- No Results Message -->
+        <p id="noResults" class="no-results">No coffees match your search. Try a different term or filter.</p>
+
+        <!-- Coffee Grid -->
+        <div class="grid grid--3 coffee__grid">
+          <article class="card card--visible" data-name="Ethiopian Yirgacheffe" data-category="single-origin" data-roast="light">
+            <div class="card__image-wrap">
+              <img src="Ethiopian.png" alt="Ethiopian Yirgacheffe coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--origin">Single Origin</span>
+              <span class="card__tag card__tag--light">Light Roast</span>
+              <h1 class="card__title">Ethiopian Yirgacheffe</h1>
+              <p class="card__meta">Ethiopia &bull; Floral, Citrus, Honey</p>
+              <p class="card__desc">Bright and complex with notes of jasmine, lemon zest, and a honey-sweet finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$18.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-1" data-cart-name="Ethiopian Yirgacheffe" data-cart-price="18.99" data-cart-image="https://picsum.photos/seed/ethcoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="Colombian Supremo" data-category="single-origin" data-roast="medium">
+            <div class="card__image-wrap">
+              <img src="Colombian.png" alt="Colombian Supremo coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--origin">Single Origin</span>
+              <span class="card__tag card__tag--medium">Medium Roast</span>
+              <h3 class="card__title">Colombian Supremo</h3>
+              <p class="card__meta">Colombia &bull; Caramel, Almond, Clean</p>
+              <p class="card__desc">Smooth and balanced with caramel sweetness, roasted almond, and a clean finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$16.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-2" data-cart-name="Colombian Supremo" data-cart-price="16.99" data-cart-image="https://picsum.photos/seed/colcoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="Sumatra Mandheling" data-category="single-origin" data-roast="dark">
+            <div class="card__image-wrap">
+              <img src="Sumatraa.png" alt="Sumatra Mandheling coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--origin">Single Origin</span>
+              <span class="card__tag card__tag--dark">Dark Roast</span>
+              <h3 class="card__title">Sumatra Mandheling</h3>
+              <p class="card__meta">Indonesia &bull; Earthy, Chocolate, Spice</p>
+              <p class="card__desc">Full-bodied with rich earthy tones, dark chocolate, and a lingering spicy finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$19.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-3" data-cart-name="Sumatra Mandheling" data-cart-price="19.99" data-cart-image="https://picsum.photos/seed/sumcoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="House Blend" data-category="blend" data-roast="medium">
+            <div class="card__image-wrap">
+              <img src="houseblend.png" alt="House Blend coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--blend">Blend</span>
+              <span class="card__tag card__tag--medium">Medium Roast</span>
+              <h3 class="card__title">House Blend</h3>
+              <p class="card__meta">Multi-origin &bull; Smooth, Versatile</p>
+              <p class="card__desc">Our flagship blend combining Central and South American beans for everyday perfection.</p>
+              <div class="card__footer">
+                <span class="card__price">$14.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-4" data-cart-name="House Blend" data-cart-price="14.99" data-cart-image="https://picsum.photos/seed/houseblend/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="French Roast" data-category="blend" data-roast="dark">
+            <div class="card__image-wrap">
+              <img src="French.png" alt="French Roast coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--blend">Blend</span>
+              <span class="card__tag card__tag--dark">Dark Roast</span>
+              <h3 class="card__title">French Roast</h3>
+              <p class="card__meta">Multi-origin &bull; Smoky, Intense</p>
+              <p class="card__desc">Bold and smoky with a bittersweet edge, perfect for those who love a strong cup.</p>
+              <div class="card__footer">
+                <span class="card__price">$15.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-5" data-cart-name="French Roast" data-cart-price="15.99" data-cart-image="https://picsum.photos/seed/frenchroast/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="Kenya AA" data-category="single-origin" data-roast="light">
+            <div class="card__image-wrap">
+              <img src="Kenya.png" alt="Kenya AA coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--origin">Single Origin</span>
+              <span class="card__tag card__tag--light">Light Roast</span>
+              <h3 class="card__title">Kenya AA</h3>
+              <p class="card__meta">Kenya &bull; Berry, Wine, Bright</p>
+              <p class="card__desc">Vibrant and wine-like with blackcurrant notes, juicy acidity, and a sparkling finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$20.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-6" data-cart-name="Kenya AA" data-cart-price="20.99" data-cart-image="https://picsum.photos/seed/kenyacoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="Costa Rica Tarrazu" data-category="single-origin" data-roast="medium">
+            <div class="card__image-wrap">
+              <img src="Costa.png" alt="Costa Rica Tarrazu coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--origin">Single Origin</span>
+              <span class="card__tag card__tag--medium">Medium Roast</span>
+              <h3 class="card__title">Costa Rica Tarrazu</h3>
+              <p class="card__meta">Costa Rica &bull; Maple, Stone Fruit</p>
+              <p class="card__desc">Rich and sweet with maple syrup, apricot, and a velvety body with a clean aftertaste.</p>
+              <div class="card__footer">
+                <span class="card__price">$17.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-7" data-cart-name="Costa Rica Tarrazu" data-cart-price="17.99" data-cart-image="https://picsum.photos/seed/costaricacoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="Breakfast Blend" data-category="blend" data-roast="medium">
+            <div class="card__image-wrap">
+              <img src="breakfast.png" alt="Breakfast Blend coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--blend">Blend</span>
+              <span class="card__tag card__tag--medium">Medium Roast</span>
+              <h3 class="card__title">Breakfast Blend</h3>
+              <p class="card__meta">Multi-origin &bull; Mild, Cheerful</p>
+              <p class="card__desc">A gentle morning companion with mild acidity, toasted grain, and a touch of brown sugar.</p>
+              <div class="card__footer">
+                <span class="card__price">$13.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-8" data-cart-name="Breakfast Blend" data-cart-price="13.99" data-cart-image="https://picsum.photos/seed/breakfastblend/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="Italian Espresso" data-category="blend" data-roast="dark">
+            <div class="card__image-wrap">
+              <img src="Italian.png" alt="Italian Espresso coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--blend">Blend</span>
+              <span class="card__tag card__tag--dark">Dark Roast</span>
+              <h3 class="card__title">Italian Espresso</h3>
+              <p class="card__meta">Multi-origin &bull; Crema, Bold, Rich</p>
+              <p class="card__desc">Dense and syrupy with a thick crema, dark cocoa, and a pleasantly bitter finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$16.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-9" data-cart-name="Italian Espresso" data-cart-price="16.99" data-cart-image="https://picsum.photos/seed/italianespresso/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--visible" data-name="Guatemala Antigua" data-category="single-origin" data-roast="medium">
+            <div class="card__image-wrap">
+              <img src="Guatemala.png" alt="Guatemala Antigua coffee" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--origin">Single Origin</span>
+              <span class="card__tag card__tag--medium">Medium Roast</span>
+              <h3 class="card__title">Guatemala Antigua</h3>
+              <p class="card__meta">Guatemala &bull; Cocoa, Spice, Smoky</p>
+              <p class="card__desc">Complex and layered with dark cocoa, cinnamon spice, and subtle smoky undertones.</p>
+              <div class="card__footer">
+                <span class="card__price">$18.49</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-10" data-cart-name="Guatemala Antigua" data-cart-price="18.49" data-cart-image="https://picsum.photos/seed/guatemalacoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="card card--visible" data-name="Ceremonial Uji Matcha" data-category="matcha" data-roast="Non-coffee">
+    <div class="card__image-wrap">
+        <img src="matcha.png" alt="Ceremonial Uji Matcha" class="card__image">
+    </div>
+    <div class="card__body">
+        <span class="card__tag card__tag--origin">Ceremonial Grade</span>
+        <span class="card__tag card__tag--medium">Stone-Ground</span>
+        <h3 class="card__title">Ceremonial Uji Matcha</h3>
+        <p class="card__meta">Kyoto, Japan &bull; Umami, Creamy, Grass</p>
+        <p class="card__desc">A vibrant, high-grade matcha from Uji, offering a rich umami flavor with a naturally sweet, creamy finish.</p>
+        <div class="card__footer">
+            <span class="card__price">$5.95</span>
+            <button class="btn btn--small btn--primary" data-cart-add data-cart-id="matcha-01" data-cart-name="Ceremonial Uji Matcha" data-cart-price="5.95" data-cart-image="https://picsum.photos/seed/matcha/80/80">Add to Cart</button>
+        </div>
+    </div>
+</article>
+<article class="card card--visible" data-name="Japanese Sencha Green Tea" data-category="Green tea" data-roast="Non-coffee">
+    <div class="card__image-wrap">
+        <img src="greentea.png" alt="Green tea" class="card__image">
+    </div>
+<div class="card__body">
+        <span class="card__tag card__tag--origin">Premium Grade</span>
+        <span class="card__tag card__tag--medium">Steamed Leaves</span>
+        <h3 class="card__title">Japanese Sencha Green Tea</h3>
+        <p class="card__meta">Shizuoka, Japan &bull; Fresh, Light, Vegetal</p>
+        <p class="card__desc">A refreshing green tea made from carefully steamed leaves, offering a clean taste with light vegetal notes and a smooth finish.</p>
+        <div class="card__footer">
+            <span class="card__price">$3.95</span>
+            <button class="btn btn--small btn--primary" data-cart-add data-cart-id="green-tea-01" data-cart-name="Japanese Sencha Green Tea" data-cart-price="3.95" data-cart-image="https://picsum.photos/seed/greentea/80/80">Add to Cart</button>
+        </div>
+    </div>
+</article>
+<article class="card card--visible" data-name="Classic Hot Chocolate" data-category="Chocolate" data-roast="Non-coffee">
+    <div class="card__image-wrap">
+        <img src="hotchocolate.png" alt="Classic Hot Chocolate" class="card__image">
+    </div>
+    <div class="card__body">
+        <span class="card__tag card__tag--origin">Premium Cocoa</span>
+        <span class="card__tag card__tag--medium">Rich Blend</span>
+        <h3 class="card__title">Classic Hot Chocolate</h3>
+        <p class="card__meta">Belgium &bull; Rich, Creamy, Sweet</p>
+        <p class="card__desc">A smooth and indulgent hot chocolate made with high-quality cocoa, offering a rich, creamy texture and a perfectly balanced sweetness.</p>
+        <div class="card__footer">
+            <span class="card__price">$4.50</span>
+            <button class="btn btn--small btn--primary" data-cart-add data-cart-id="hot-chocolate-01" data-cart-name="Classic Hot Chocolate" data-cart-price="4.50" data-cart-image="https://picsum.photos/seed/hotchocolate/80/80">Add to Cart</button>
+        </div>
+    </div>
+</article>
+<article class="card card--visible" data-name="Strawberry Milkshake" data-category="Milkshake" data-roast="Non-coffee">
+    <div class="card__image-wrap">
+        <img src="stawberry.png" alt="Strawberry Milkshake" class="card__image">
+    </div>
+    <div class="card__body">
+        <span class="card__tag card__tag--origin">Fresh Fruit</span>
+        <span class="card__tag card__tag--medium">Creamy Blend</span>
+        <h3 class="card__title">Strawberry Milkshake</h3>
+        <p class="card__meta">Classic Treat &bull; Sweet, Creamy, Fruity</p>
+        <p class="card__desc">A deliciously smooth milkshake made with fresh strawberries and creamy milk, delivering a sweet and refreshing flavor in every sip.</p>
+        <div class="card__footer">
+            <span class="card__price">$4.25</span>
+            <button class="btn btn--small btn--primary" data-cart-add data-cart-id="strawberry-milkshake-01" data-cart-name="Strawberry Milkshake" data-cart-price="4.25" data-cart-image="https://picsum.photos/seed/strawberrymilkshake/80/80">Add to Cart</button>
+        </div>
+    </div>
+</article>
+<article class="card card--visible" data-name="" data-category="Vanilla" data-roast="Non-coffee">
+    <div class="card__image-wrap">
+        <img src="Vanilla.png" alt="Vanilla Latte" class="card__image">
+    </div>
+    <div class="card__body">
+        <span class="card__tag card__tag--origin">Arabica Blend</span>
+        <span class="card__tag card__tag--medium">Espresso-Based</span>
+        <h3 class="card__title">Vanilla Latte</h3>
+        <p class="card__meta">Italian Style &bull; Smooth, Sweet, Creamy</p>
+        <p class="card__desc">A smooth espresso drink blended with steamed milk and a touch of vanilla syrup, creating a creamy texture with a lightly sweet, aromatic flavor.</p>
+        <div class="card__footer">
+            <span class="card__price">$4.75</span>
+            <button class="btn btn--small btn--primary" data-cart-add data-cart-id="vanilla-latte-01" data-cart-name="Vanilla Latte" data-cart-price="4.75" data-cart-image="https://picsum.photos/seed/vanillalatte/80/80">Add to Cart</button>
+        </div>
+    </div>
+
+<article class="card card--visible" data-name="Chocolate Lava Cake" data-category="Cake" data-roast="dessert">
+    <div class="card__image-wrap">
+        <img src="d1.png" alt="Chocolate Lava Cake" class="card__image">
+    </div>
+        <span class="card__tag card__tag--origin">Premium Cocoa</span>
+        <span class="card__tag card__tag--medium">Oven-Baked</span>
+        <h3 class="card__title">Chocolate Lava Cake</h3>
+        <p class="card__meta">French Style &bull; Rich, Warm, Indulgent</p>
+        <p class="card__desc">A decadent chocolate cake with a gooey molten center, served warm for a rich and indulgent dessert experience.</p>
+        <span class="card__price">$5.5</span>
+         <button class="btn btn--small btn--primary" data-cart-add data-cart-id="cake-1" data-cart-name="Chocolate Lava Cake" data-cart-price="5.5" data-cart-image="https://picsum.photos/seed/vanillalatte/80/80">Add to Cart</button>
+        
+    </div>
+       
+      
+    </section>
+  </main>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">Bean <span>Boutique</span></div>
+          <p class="footer__brand-desc">Premium specialty coffee, hand-roasted in small batches and delivered fresh.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">Fb</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">Ig</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">Tw</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Shop</h3>
+          <a href="coffee.html" class="footer__link">All Coffee</a>
+          <a href="equipment.html" class="footer__link">Equipment</a>
+          <a href="offers.html" class="footer__link">Subscriptions</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Company</h3>
+          <a href="index.html" class="footer__link">About Us</a>
+          <a href="events.html" class="footer__link">Events</a>
+          <a href="#" class="footer__link">Sustainability</a>
+          <a href="#" class="footer__link">Careers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Contact</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128205;</span>
+            <span>42 Roast Lane, Brewville, CA 90210</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128222;</span>
+            <span>(555) 123-4567</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#9993;</span>
+            <span>hello@beanboutique.com</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128337;</span>
+            <span>Mon-Sat: 7AM - 8PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Bean Boutique. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

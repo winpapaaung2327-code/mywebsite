@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your Bean Boutique shopping cart - review items, update quantities, and proceed to checkout.">
+  <title>Shopping Cart | Bean Boutique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast__icon">&#9745;</span>
+    <span class="toast__text"></span>
+  </div>
+
+ 
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Bean Boutique Home">
+        <span class="header__logo-icon">&#9749;</span>
+        <span class="header__logo-text">Bean <span>Boutique</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="coffee.html" class="nav__link">Coffee</a></li>
+          <li><a href="equipment.html" class="nav__link">Equipment</a></li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="offers.html" class="nav__link">Offers</a></li>
+          <li>
+            <a href="cart.html" class="nav__link nav__cart-link nav__link--active" aria-label="Shopping cart">
+              Cart
+              <span class="nav__cart-badge nav__cart-badge--hidden">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button id="navToggle" class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+
+  <div id="navMobile" class="nav__mobile" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="nav__mobile-list">
+        <li><a href="index.html" class="nav__mobile-link">Home</a></li>
+        <li><a href="coffee.html" class="nav__mobile-link">Coffee</a></li>
+        <li><a href="equipment.html" class="nav__mobile-link">Equipment</a></li>
+        <li><a href="events.html" class="nav__mobile-link">Events</a></li>
+        <li><a href="offers.html" class="nav__mobile-link">Offers</a></li>
+        <li><a href="cart.html" class="nav__mobile-link nav__mobile-link--active">Cart</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="page-header" aria-labelledby="cartPageTitle">
+      <div class="container">
+        <h1 id="cartPageTitle" class="page-header__title">Shopping Cart</h1>
+        <p class="page-header__desc">Review your selections, adjust quantities, and proceed to checkout when ready.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Cart contents">
+      <div class="container">
+
+        
+        <div id="cartEmpty" class="cart-empty" style="display:none;">
+          <div class="cart-empty__icon">&#128722;</div>
+          <h2 class="cart-empty__title">Your cart is empty</h2>
+          <p class="cart-empty__desc">Looks like you have not added anything to your cart yet. Start exploring our coffee and equipment.</p>
+          <a href="coffee.html" class="btn btn--warm">Browse Coffee</a>
+        </div>
+
+       
+        <div class="cart-layout">
+          
+          <div id="cartItems" class="cart-items" aria-label="Cart items">
+            
+          </div>
+
+          
+          <div id="cartSummary" class="cart-summary" aria-label="Order summary">
+            <h2 class="cart-summary__title">Order Summary</h2>
+            <div class="cart-summary__row">
+              <span>Subtotal</span>
+              <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-summary__row">
+              <span>Shipping</span>
+              <span id="cartShipping">FREE</span>
+            </div>
+            <div class="cart-summary__row cart-summary__row--total">
+              <span>Total</span>
+              <span id="cartTotal">$0.00</span>
+            </div>
+            <p style="font-size:0.78rem; color:#4dcc7c; margin:0.75rem 0 1.25rem;">Free shipping on orders over $50</p>
+            <button id="checkoutBtn" class="btn btn--warm btn--full">Proceed to Checkout</button>
+            <a href="coffee.html" class="btn btn--outline btn--full" style="margin-top:0.75rem;">Continue Shopping</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">Bean <span>Boutique</span></div>
+          <p class="footer__brand-desc">Premium specialty coffee, hand-roasted in small batches and delivered fresh.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">Fb</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">Ig</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">Tw</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Shop</h3>
+          <a href="coffee.html" class="footer__link">All Coffee</a>
+          <a href="equipment.html" class="footer__link">Equipment</a>
+          <a href="offers.html" class="footer__link">Subscriptions</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Company</h3>
+          <a href="index.html" class="footer__link">About Us</a>
+          <a href="events.html" class="footer__link">Events</a>
+          <a href="#" class="footer__link">Sustainability</a>
+          <a href="#" class="footer__link">Careers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Contact</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128205;</span>
+            <span>42 Roast Lane, Brewville, CA 90210</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128222;</span>
+            <span>(555) 123-4567</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#9993;</span>
+            <span>hello@beanboutique.com</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128337;</span>
+            <span>Mon-Sat: 7AM - 8PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Bean Boutique. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

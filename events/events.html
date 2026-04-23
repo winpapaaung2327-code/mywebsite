@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Bean Boutique events and workshops - learn latte art, espresso techniques, cupping, and more.">
+  <title>Events &amp; Workshops | Bean Boutique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast__icon">&#9745;</span>
+    <span class="toast__text"></span>
+  </div>
+
+  
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Bean Boutique Home">
+        <span class="header__logo-icon">&#9749;</span>
+        <span class="header__logo-text">Bean <span>Boutique</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="coffee.html" class="nav__link">Coffee</a></li>
+          <li><a href="equipment.html" class="nav__link">Equipment</a></li>
+          <li><a href="events.html" class="nav__link nav__link--active">Events</a></li>
+          <li><a href="offers.html" class="nav__link">Offers</a></li>
+          <li>
+            <a href="cart.html" class="nav__link nav__cart-link" aria-label="Shopping cart">
+              Cart
+              <span class="nav__cart-badge nav__cart-badge--hidden">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button id="navToggle" class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="navMobile" class="nav__mobile" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="nav__mobile-list">
+        <li><a href="index.html" class="nav__mobile-link">Home</a></li>
+        <li><a href="coffee.html" class="nav__mobile-link">Coffee</a></li>
+        <li><a href="equipment.html" class="nav__mobile-link">Equipment</a></li>
+        <li><a href="events.html" class="nav__mobile-link nav__mobile-link--active">Events</a></li>
+        <li><a href="offers.html" class="nav__mobile-link">Offers</a></li>
+        <li><a href="cart.html" class="nav__mobile-link">Cart</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="page-header" aria-labelledby="eventsPageTitle">
+      <div class="container">
+        <h1 id="eventsPageTitle" class="page-header__title">Events &amp; Workshops</h1>
+        <p class="page-header__desc">Hands-on learning experiences led by our expert baristas. From beginner basics to advanced latte art.</p>
+      </div>
+    </section>
+        <section class="section" aria-labelledby="upcomingTitle">
+      <div class="container">
+        <div class="section-intro">
+          <h2 id="upcomingTitle">Upcoming Events</h2>
+          <p>Reserve your spot early — our workshops fill up quickly. All events include complimentary coffee tasting.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="event-card">
+            <span class="event-card__date">Jan 18, 2025 &bull; 10:00 AM - 12:30 PM</span>
+            <h3 class="event-card__title">Pour-Over Fundamentals</h3>
+            <p class="event-card__desc">Learn the science and technique behind pour-over brewing. Master water temperature, pour speed, grind size, and ratio to brew café-quality coffee at home. All equipment provided.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">$45.00</span>
+              <span style="font-size:0.82rem; color:#5c6080;">12 spots remaining</span>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <span class="event-card__date">Jan 25, 2025 &bull; 2:00 PM - 4:00 PM</span>
+            <h3 class="event-card__title">Latte Art for Beginners</h3>
+            <p class="event-card__desc">Discover the secrets behind beautiful latte art. Practice steaming milk to the perfect microfoam consistency and learn to pour hearts, rosettas, and tulips on real espresso.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">$55.00</span>
+              <span style="font-size:0.82rem; color:#5c6080;">8 spots remaining</span>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <span class="event-card__date">Feb 1, 2025 &bull; 10:00 AM - 1:00 PM</span>
+            <h3 class="event-card__title">Espresso Extraction Masterclass</h3>
+            <p class="event-card__desc">Dive deep into espresso theory and practice. Understand dose, yield, time, and how to dial in any coffee. Includes hands-on time with commercial-grade equipment.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">$75.00</span>
+              <span style="font-size:0.82rem; color:#5c6080;">6 spots remaining</span>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <span class="event-card__date">Feb 8, 2025 &bull; 11:00 AM - 12:30 PM</span>
+            <h3 class="event-card__title">Coffee Cupping Session</h3>
+            <p class="event-card__desc">Train your palate like a professional Q-grader. Taste and evaluate coffees from five different origins using the SCA cupping protocol. No experience needed.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">$35.00</span>
+              <span style="font-size:0.82rem; color:#5c6080;">15 spots remaining</span>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <span class="event-card__date">Feb 15, 2025 &bull; 3:00 PM - 5:00 PM</span>
+            <h3 class="event-card__title">Cold Brew &amp; Iced Coffee Workshop</h3>
+            <p class="event-card__desc">Explore cold brewing methods including immersion, Japanese iced pour-over, and nitro cold brew. Learn recipes and techniques to make incredible iced coffee year-round.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">$40.00</span>
+              <span style="font-size:0.82rem; color:#5c6080;">10 spots remaining</span>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <span class="event-card__date">Feb 22, 2025 &bull; 10:00 AM - 12:00 PM</span>
+            <h3 class="event-card__title">Home Roasting 101</h3>
+            <p class="event-card__desc">Learn to roast green coffee beans at home using simple equipment. Understand roast levels, crack points, and how to develop your own signature roast profile.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">$65.00</span>
+              <span style="font-size:0.82rem; color:#5c6080;">5 spots remaining</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="regTitle">
+      <div class="container">
+        <div class="section-intro">
+          <h2 id="regTitle">Register for an Event</h2>
+          <p>Fill out the form below to secure your spot. You will receive a confirmation email within 24 hours.</p>
+        </div>
+
+        <div class="form-section">
+          <form id="eventForm" novalidate>
+            <div class="form-group">
+              <label for="regName" class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" id="regName" class="form-input" placeholder="Enter your full name" aria-required="true">
+              <p class="form-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="regEmail" class="form-label">Email Address <span class="required">*</span></label>
+              <input type="email" id="regEmail" class="form-input" placeholder="you@example.com" aria-required="true">
+              <p class="form-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="regPhone" class="form-label">Phone Number</label>
+              <input type="tel" id="regPhone" class="form-input" placeholder="(555) 000-0000">
+              <p class="form-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="regEvent" class="form-label">Select Event <span class="required">*</span></label>
+              <select id="regEvent" class="form-select" aria-required="true">
+                <option value="">-- Choose an event --</option>
+                <option value="pour-over">Pour-Over Fundamentals - Jan 18 ($45)</option>
+                <option value="latte-art">Latte Art for Beginners - Jan 25 ($55)</option>
+                <option value="espresso">Espresso Extraction Masterclass - Feb 1 ($75)</option>
+                <option value="cupping">Coffee Cupping Session - Feb 8 ($35)</option>
+                <option value="cold-brew">Cold Brew &amp; Iced Coffee - Feb 15 ($40)</option>
+                <option value="roasting">Home Roasting 101 - Feb 22 ($65)</option>
+              </select>
+              <p class="form-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="regNotes" class="form-label">Additional Notes</label>
+              <textarea id="regNotes" class="form-textarea" placeholder="Any dietary requirements, accessibility needs, or questions..."></textarea>
+              <p class="form-error" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="btn btn--warm btn--full">Submit Registration</button>
+          </form>
+
+          <div id="formSuccess" class="form-success" style="display:none;">
+            <div class="form-success__icon">&#10004;</div>
+            <h3 class="form-success__title">Registration Successful!</h3>
+            <p>Thank you for signing up. A confirmation email with event details and payment instructions will be sent shortly.</p>
+            <a href="events.html" class="btn btn--outline" style="margin-top:1.5rem;">Back to Events</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">Bean <span>Boutique</span></div>
+          <p class="footer__brand-desc">Premium specialty coffee, hand-roasted in small batches and delivered fresh.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">Fb</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">Ig</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">Tw</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Shop</h3>
+          <a href="coffee.html" class="footer__link">All Coffee</a>
+          <a href="equipment.html" class="footer__link">Equipment</a>
+          <a href="offers.html" class="footer__link">Subscriptions</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Company</h3>
+          <a href="index.html" class="footer__link">About Us</a>
+          <a href="events.html" class="footer__link">Events</a>
+          <a href="#" class="footer__link">Sustainability</a>
+          <a href="#" class="footer__link">Careers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Contact</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128205;</span>
+            <span>42 Roast Lane, Brewville, CA 90210</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128222;</span>
+            <span>(555) 123-4567</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#9993;</span>
+            <span>hello@beanboutique.com</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128337;</span>
+            <span>Mon-Sat: 7AM - 8PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Bean Boutique. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bean Boutique - Premium specialty coffee shop offering hand-roasted beans, brewing equipment, and workshops.">
+  <title>Bean Boutique | Premium Specialty Coffee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast__icon">&#9745;</span>
+    <span class="toast__text"></span>
+  </div>
+
+
+  <div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" style="position:relative;">
+      <button id="modalClose" class="modal__close" aria-label="Close popup">&times;</button>
+      <div class="modal__icon">&#9749;</div>
+      <h2 id="modalTitle" class="modal__title">Welcome to Bean Boutique</h2>
+      <p class="modal__desc">Join our community and get 10% off your first order plus exclusive brewing tips.</p>
+      <form id="modalForm" class="modal__form" novalidate>
+        <label for="modalEmail" class="form-label" style="display:none;">Email</label>
+        <input type="email" id="modalEmail" class="modal__input" placeholder="Enter your email address" aria-label="Email address">
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+      <p id="modalMessage" class="modal__message"></p>
+      <p class="modal__note">No spam, unsubscribe anytime. Your data stays private.</p>
+    </div>
+  </div>
+
+ 
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Bean Boutique Home">
+        <span class="header__logo-icon">&#9749;</span>
+        <span class="header__logo-text">Bean <span>Boutique</span></span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="coffee.html" class="nav__link">Coffee</a></li>
+          <li><a href="equipment.html" class="nav__link">Equipment</a></li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="offers.html" class="nav__link">Offers</a></li>
+          <li>
+            <a href="cart.html" class="nav__link nav__cart-link" aria-label="Shopping cart">
+              Cart
+              <span class="nav__cart-badge nav__cart-badge--hidden">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button id="navToggle" class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  
+  <div id="navMobile" class="nav__mobile" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="nav__mobile-list">
+        <li><a href="index.html" class="nav__mobile-link nav__mobile-link--active">Home</a></li>
+        <li><a href="coffee.html" class="nav__mobile-link">Coffee</a></li>
+        <li><a href="equipment.html" class="nav__mobile-link">Equipment</a></li>
+        <li><a href="events.html" class="nav__mobile-link">Events</a></li>
+        <li><a href="offers.html" class="nav__mobile-link">Offers</a></li>
+        <li><a href="cart.html" class="nav__mobile-link">Cart</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  
+  <main>
+  
+    <section class="hero" aria-label="Featured slideshow">
+      <div class="hero__slide hero__slide--active">
+        <img src="Interior.png" alt="Interior of Bean Boutique coffee shop" class="hero__image">
+        <div class="hero__content">
+          <p class="hero__subtitle">Hand-Roasted Perfection</p>
+          <h1 class="hero__title">Experience Coffee at Its Finest</h1>
+          <p class="hero__desc">Ethically sourced, expertly roasted, and delivered fresh to your door. Taste the difference craftsmanship makes.</p>
+          <a href="coffee.html" class="btn btn--warm">Explore Our Coffee</a>
+        </div>
+      </div>
+      <div class="hero__slide">
+        <img src="Barista.png" alt="Barista pouring a latte" class="hero__image">
+        <div class="hero__content">
+          <p class="hero__subtitle">Master the Craft</p>
+          <h1 class="hero__title">Learn From the Best Baristas</h1>
+          <p class="hero__desc">Join our workshops and discover the art of brewing. From pour-over to espresso, elevate your coffee game.</p>
+          <a href="events.html" class="btn btn--primary">View Workshops</a>
+        </div>
+      </div>
+      <div class="hero__slide">
+        <img src="bean.png" alt="Fresh coffee beans in a burlap bag" class="hero__image">
+        <div class="hero__content">
+          <p class="hero__subtitle">Exclusive Deals</p>
+          <h1 class="hero__title">Subscribe &amp; Save 20%</h1>
+          <p class="hero__desc">Get freshly roasted beans delivered monthly. Choose your roast level, skip anytime, cancel whenever you want.</p>
+          <a href="offers.html" class="btn btn--warm">See Subscriptions</a>
+        </div>
+      </div>
+      
+
+ 
+    <section class="section" aria-labelledby="featuredTitle">
+      <div class="container">
+        <div class="section-intro">
+          <h2 id="featuredTitle">Featured Selections</h2>
+          <p>A curated collection of our most beloved single-origin and blended coffees, freshly roasted in small batches.</p>
+        </div>
+
+        <div class="grid grid--4">
+          <article class="card">
+            <div class="card__image-wrap">
+              <img src="Ethiopian.png" alt="Ethiopian Yirgacheffe coffee beans" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--light">Light Roast</span>
+              <h3 class="card__title">Ethiopian Yirgacheffe</h3>
+              <p class="card__meta">Single Origin &bull; Floral &amp; Citrus</p>
+              <p class="card__desc">Bright and complex with notes of jasmine, lemon zest, and a honey-sweet finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$18.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-1" data-cart-name="Ethiopian Yirgacheffe" data-cart-price="18.99" data-cart-image="https://picsum.photos/seed/ethcoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__image-wrap">
+              <img src="Colombian.png" alt="Colombian Supremo coffee beans" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--medium">Medium Roast</span>
+              <h3 class="card__title">Colombian Supremo</h3>
+              <p class="card__meta">Single Origin &bull; Nutty &amp; Sweet</p>
+              <p class="card__desc">Smooth and balanced with caramel sweetness, roasted almond, and a clean finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$16.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-2" data-cart-name="Colombian Supremo" data-cart-price="16.99" data-cart-image="https://picsum.photos/seed/colcoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__image-wrap">
+              <img src="Sumatra.png" alt="Sumatra Mandheling coffee beans" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--dark">Dark Roast</span>
+              <h3 class="card__title">Sumatra Mandheling</h3>
+              <p class="card__meta">Single Origin &bull; Earthy &amp; Bold</p>
+              <p class="card__desc">Full-bodied with rich earthy tones, dark chocolate, and a lingering spicy finish.</p>
+              <div class="card__footer">
+                <span class="card__price">$19.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-3" data-cart-name="Sumatra Mandheling" data-cart-price="19.99" data-cart-image="https://picsum.photos/seed/sumcoffee/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__image-wrap">
+              <img src="House.png" alt="House Blend coffee beans" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__tag card__tag--blend">Blend</span>
+              <h3 class="card__title">House Blend</h3>
+              <p class="card__meta">Signature Blend &bull; Smooth &amp; Versatile</p>
+              <p class="card__desc">Our flagship blend combining Central and South American beans for everyday perfection.</p>
+              <div class="card__footer">
+                <span class="card__price">$14.99</span>
+                <button class="btn btn--small btn--primary" data-cart-add data-cart-id="coffee-4" data-cart-name="House Blend" data-cart-price="14.99" data-cart-image="https://picsum.photos/seed/houseblend/80/80">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="coffee.html" class="btn btn--outline">View All Coffees</a>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--alt" aria-labelledby="aboutTitle">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about__image-wrap">
+            <img src="story.png" alt="Inside the Bean Boutique roastery" class="about__image">
+          </div>
+          <div>
+            <p class="about__label">Our Story</p>
+            <h2 id="aboutTitle">Crafted With Passion Since 2015</h2>
+            <p class="about__text">Bean Boutique was born from a simple belief: everyone deserves access to exceptional coffee. We travel to origin countries, build direct relationships with farmers, and roast in small batches to unlock each bean's full potential.</p>
+            <p class="about__text">From our single-origin selections to our signature blends, every bag represents our commitment to quality, sustainability, and the communities that make great coffee possible.</p>
+            <div class="about__stats">
+              <div>
+                <div class="about__stat-number">12+</div>
+                <div class="about__stat-label">Origin Countries</div>
+              </div>
+              <div>
+                <div class="about__stat-number">50K+</div>
+                <div class="about__stat-label">Happy Customers</div>
+              </div>
+              <div>
+                <div class="about__stat-number">8</div>
+                <div class="about__stat-label">Years Roasting</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="ctaTitle">
+      <div class="container">
+        <h2 id="ctaTitle">Ready to Brew Something Special?</h2>
+        <p class="cta-section__desc">Browse our full catalog, find your perfect equipment, or sign up for a coffee subscription tailored to your taste.</p>
+        <div>
+          <a href="coffee.html" class="btn btn--warm">Shop Coffee</a>
+          <a href="equipment.html" class="btn btn--outline">Shop Equipment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">Bean <span>Boutique</span></div>
+          <p class="footer__brand-desc">Premium specialty coffee, hand-roasted in small batches and delivered fresh. Ethically sourced from the world's best growing regions.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">Fb</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">Ig</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">Tw</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Shop</h3>
+          <a href="coffee.html" class="footer__link">All Coffee</a>
+          <a href="equipment.html" class="footer__link">Equipment</a>
+          <a href="offers.html" class="footer__link">Subscriptions</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Company</h3>
+          <a href="index.html" class="footer__link">About Us</a>
+          <a href="events.html" class="footer__link">Events</a>
+          <a href="#" class="footer__link">Sustainability</a>
+          <a href="#" class="footer__link">Careers</a>
+        </div>
+        <div>
+          <h3 class="footer__heading">Contact</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128205;</span>
+            <span>42 Roast Lane, Brewville, CA 90210</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128222;</span>
+            <span>(555) 123-4567</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#9993;</span>
+            <span>hello@beanboutique.com</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">&#128337;</span>
+            <span>Mon-Sat: 7AM - 8PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Bean Boutique. All rights reserved. Crafted with care.</p>
+      </div>
+    </div>
+  </footer>
+  
+   
+
+  <script src="script.js"></script>
+
+</html>
