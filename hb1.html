@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Something For You ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background: #f8f2ea;
+    color: #302020;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #fffdfa 0%,
+            #faf5ee 45%,
+            #f5ede4 100%
+        );
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title {
+    position: absolute;
+
+    top: 10vh;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 20;
+
+    color: #302020;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    font-weight: 500;
+
+    letter-spacing: 1.2px;
+
+    line-height: 1.1;
+
+    animation: titleIn 1.3s ease forwards;
+}
+
+
+.subtitle {
+    display: block;
+
+    margin-top: 8px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(25px, 2.5vw, 34px);
+
+    color: #a93647;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   HEART AREA
+===================================================== */
+
+.heart-area {
+    position: absolute;
+
+    top: 37%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 270px;
+    height: 250px;
+
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =====================================================
+   HEART GLOW
+===================================================== */
+
+.heart-glow {
+    position: absolute;
+
+    width: 190px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: rgba(205, 20, 42, 0.25);
+
+    filter: blur(38px);
+
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   SVG 3D HEART
+===================================================== */
+
+.heart-svg {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(0 18px 15px rgba(100, 0, 12, 0.20))
+        drop-shadow(0 7px 35px rgba(190, 0, 25, 0.22));
+
+    animation: heartFloat 3s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   HEART HIGHLIGHT
+===================================================== */
+
+.heart-highlight {
+    opacity: 0.85;
+
+    filter: blur(1px);
+}
+
+
+/* =====================================================
+   PULL SECTION
+===================================================== */
+
+.pull-area {
+    position: absolute;
+
+    bottom: 8vh;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(600px, 82vw);
+
+    text-align: center;
+
+    z-index: 30;
+}
+
+
+/* =====================================================
+   INSTRUCTION
+===================================================== */
+
+.instruction {
+    margin-bottom: 25px;
+
+    color: #463535;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(19px, 2vw, 24px);
+
+    letter-spacing: 1.4px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+.slider {
+    position: relative;
+
+    width: 100%;
+
+    height: 65px;
+}
+
+
+/* LINE */
+
+.slider-line {
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    top: 50%;
+
+    height: 1px;
+
+    background: #b79b96;
+}
+
+
+/* ARROW */
+
+.slider-line::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: -4px;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 1px solid #9d7772;
+    border-right: 1px solid #9d7772;
+
+    transform: rotate(45deg);
+}
+
+
+/* =====================================================
+   DRAG BUTTON
+===================================================== */
+
+.drag-button {
+    position: absolute;
+
+    left: 5%;
+
+    top: 50%;
+
+    width: 58px;
+    height: 58px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #ffffff 0%,
+            #fffaf5 45%,
+            #eee1d9 100%
+        );
+
+    border: 1px solid rgba(120, 75, 70, 0.12);
+
+    box-shadow:
+        0 7px 20px rgba(90, 45, 40, 0.17),
+        inset 0 2px 6px rgba(255,255,255,0.95);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: grab;
+
+    touch-action: none;
+
+    user-select: none;
+
+    z-index: 10;
+}
+
+.drag-button:active {
+    cursor: grabbing;
+}
+
+
+/* =====================================================
+   SMALL HEART
+===================================================== */
+
+.small-heart {
+    width: 22px;
+    height: 22px;
+
+    transform: rotate(-45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6875 0%,
+            #db1730 50%,
+            #9e0013 100%
+        );
+
+    border-radius: 4px 0 4px 0;
+
+    position: relative;
+
+    box-shadow:
+        inset 2px 2px 3px rgba(255,255,255,0.4),
+        0 3px 7px rgba(120,0,15,0.3);
+}
+
+.small-heart::before,
+.small-heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+.small-heart::before {
+    top: -11px;
+    left: 0;
+}
+
+.small-heart::after {
+    top: 0;
+    left: 11px;
+}
+
+
+/* =====================================================
+   BOTTOM LABEL
+===================================================== */
+
+.pull-text {
+    margin-top: 8px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #a17f79;
+}
+
+
+/* =====================================================
+   DECORATION
+===================================================== */
+
+.decor {
+    position: absolute;
+
+    color: rgba(170, 50, 65, 0.22);
+
+    font-size: 16px;
+
+    z-index: 2;
+
+    animation: floatDecor 4s ease-in-out infinite;
+}
+
+.d1 {
+    top: 32%;
+    left: 26%;
+}
+
+.d2 {
+    top: 39%;
+    right: 25%;
+
+    animation-delay: 1s;
+}
+
+.d3 {
+    top: 50%;
+    left: 22%;
+
+    animation-delay: 2s;
+}
+
+.d4 {
+    top: 51%;
+    right: 22%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =====================================================
+   TRANSITION
+===================================================== */
+
+.transition {
+    position: fixed;
+
+    inset: 0;
+
+    background: #f8f1e9;
+
+    z-index: 100;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.transition.active {
+    animation: transitionIn 1.3s ease forwards;
+}
+
+.transition-text {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 55px;
+
+    color: #a42d3f;
+
+    opacity: 0;
+}
+
+.transition.active .transition-text {
+    animation: textIn 1s ease forwards;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes titleIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-7px) scale(1.035);
+    }
+}
+
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes floatDecor {
+
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: translateY(-10px);
+    }
+}
+
+
+@keyframes transitionIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes textIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .title {
+        top: 9vh;
+
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 25px;
+    }
+
+    .heart-area {
+        top: 36%;
+    }
+
+    .heart-svg {
+        width: 155px;
+        height: 155px;
+    }
+
+    .pull-area {
+        bottom: 7vh;
+    }
+
+    .instruction {
+        font-size: 19px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<div class="page">
+
+
+    <!-- TITLE -->
+
+    <div class="title">
+
+        a little something,
+
+        <span class="subtitle">
+            for you ♡
+        </span>
+
+    </div>
+
+
+    <!-- DECORATIONS -->
+
+    <div class="decor d1">♡</div>
+    <div class="decor d2">♡</div>
+    <div class="decor d3">✦</div>
+    <div class="decor d4">✧</div>
+
+
+    <!-- =================================================
+         3D HEART
+    ================================================== -->
+
+    <div class="heart-area">
+
+        <div class="heart-glow"></div>
+
+
+        <svg
+            class="heart-svg"
+            viewBox="0 0 220 200"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <defs>
+
+                <!-- Main red 3D gradient -->
+
+                <linearGradient
+                    id="heartGradient"
+                    x1="15%"
+                    y1="5%"
+                    x2="90%"
+                    y2="100%"
+                >
+
+                    <stop
+                        offset="0%"
+                        stop-color="#ff7a84"
+                    />
+
+                    <stop
+                        offset="18%"
+                        stop-color="#f32f43"
+                    />
+
+                    <stop
+                        offset="48%"
+                        stop-color="#d6001d"
+                    />
+
+                    <stop
+                        offset="75%"
+                        stop-color="#a60016"
+                    />
+
+                    <stop
+                        offset="100%"
+                        stop-color="#65000b"
+                    />
+
+                </linearGradient>
+
+
+                <!-- Dark bottom shading -->
+
+                <radialGradient
+                    id="bottomShade"
+                    cx="50%"
+                    cy="20%"
+                    r="85%"
+                >
+
+                    <stop
+                        offset="0%"
+                        stop-color="rgba(255,255,255,0)"
+                    />
+
+                    <stop
+                        offset="70%"
+                        stop-color="#76000d"
+                        stop-opacity="0.15"
+                    />
+
+                    <stop
+                        offset="100%"
+                        stop-color="#320006"
+                        stop-opacity="0.5"
+                    />
+
+                </radialGradient>
+
+
+                <!-- Highlight -->
+
+                <linearGradient
+                    id="highlightGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                >
+
+                    <stop
+                        offset="0%"
+                        stop-color="white"
+                        stop-opacity="0.9"
+                    />
+
+                    <stop
+                        offset="60%"
+                        stop-color="white"
+                        stop-opacity="0.12"
+                    />
+
+                    <stop
+                        offset="100%"
+                        stop-color="white"
+                        stop-opacity="0"
+                    />
+
+                </linearGradient>
+
+
+                <!-- 3D shadow -->
+
+                <filter
+                    id="heartShadow"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="220%"
+                >
+
+                    <feDropShadow
+                        dx="0"
+                        dy="13"
+                        stdDeviation="9"
+                        flood-color="#72000d"
+                        flood-opacity="0.35"
+                    />
+
+                </filter>
+
+            </defs>
+
+
+            <!-- HEART -->
+
+            <path
+                d="
+                M110 184
+                C101 174 35 120 22 83
+                C10 48 29 19 59 17
+                C82 15 101 28 110 47
+                C119 28 138 15 161 17
+                C191 19 210 48 198 83
+                C185 120 119 174 110 184
+                Z
+                "
+
+                fill="url(#heartGradient)"
+
+                filter="url(#heartShadow)"
+            />
+
+
+            <!-- Dark 3D lower shade -->
+
+            <path
+                d="
+                M110 184
+                C101 174 35 120 22 83
+                C39 103 69 126 110 142
+                C151 126 181 103 198 83
+                C185 120 119 174 110 184
+                Z
+                "
+
+                fill="url(#bottomShade)"
+
+                opacity="0.75"
+            />
+
+
+            <!-- Left glossy reflection -->
+
+            <path
+                class="heart-highlight"
+
+                d="
+                M48 35
+                C31 42 31 64 39 78
+                C45 89 56 98 66 101
+                C56 78 57 55 72 40
+                C65 34 56 32 48 35
+                Z
+                "
+
+                fill="url(#highlightGradient)"
+            />
+
+
+            <!-- Top shine -->
+
+            <ellipse
+                cx="67"
+                cy="47"
+                rx="25"
+                ry="10"
+
+                fill="white"
+
+                opacity="0.42"
+
+                transform="rotate(-30 67 47)"
+            />
+
+
+            <!-- Small bright reflection -->
+
+            <ellipse
+                cx="54"
+                cy="55"
+                rx="8"
+                ry="4"
+
+                fill="white"
+
+                opacity="0.72"
+
+                transform="rotate(-35 54 55)"
+            />
+
+
+            <!-- Edge highlight -->
+
+            <path
+                d="
+                M39 69
+                C29 39 49 22 70 24
+                "
+
+                fill="none"
+
+                stroke="white"
+
+                stroke-width="3"
+
+                stroke-linecap="round"
+
+                opacity="0.35"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <!-- =================================================
+         PULL AREA
+    ================================================== -->
+
+    <div class="pull-area">
+
+
+        <div
+            class="instruction"
+            id="instruction"
+        >
+            pull the little heart →
+        </div>
+
+
+        <div
+            class="slider"
+            id="slider"
+        >
+
+            <div class="slider-line"></div>
+
+
+            <!-- DRAG BUTTON -->
+
+            <div
+                class="drag-button"
+                id="dragButton"
+            >
+
+                <div class="small-heart"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="pull-text">
+            PULL & RELEASE
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TRANSITION
+===================================================== -->
+
+<div
+    class="transition"
+    id="transition"
+>
+
+    <div class="transition-text">
+        just for you ♡
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   DRAG SYSTEM
+===================================================== */
+
+const dragButton =
+    document.getElementById("dragButton");
+
+const slider =
+    document.getElementById("slider");
+
+const instruction =
+    document.getElementById("instruction");
+
+const transition =
+    document.getElementById("transition");
+
+const heart =
+    document.querySelector(".heart-svg");
+
+
+let dragging = false;
+
+let startX = 0;
+
+let distance = 0;
+
+
+/* =====================================================
+   POINTER POSITION
+===================================================== */
+
+function getX(event) {
+
+    if (event.touches) {
+
+        return event.touches[0].clientX;
+
+    }
+
+    return event.clientX;
+}
+
+
+/* =====================================================
+   START DRAG
+===================================================== */
+
+function startDrag(event) {
+
+    event.preventDefault();
+
+    dragging = true;
+
+    startX = getX(event);
+
+    dragButton.style.transition = "none";
+
+    instruction.style.opacity = "0.45";
+}
+
+
+/* =====================================================
+   MOVE
+===================================================== */
+
+function moveDrag(event) {
+
+    if (!dragging) return;
+
+    event.preventDefault();
+
+    distance =
+        getX(event) - startX;
+
+
+    if (distance < 0) {
+
+        distance = 0;
+
+    }
+
+
+    const maxDistance =
+        slider.offsetWidth * 0.67;
+
+
+    if (distance > maxDistance) {
+
+        distance = maxDistance;
+
+    }
+
+
+    dragButton.style.transform =
+        `translate(${distance}px, -50%)`;
+
+
+    /* Heart gets slightly larger */
+
+    const progress =
+        distance / maxDistance;
+
+
+    heart.style.transform =
+        `scale(${1 + progress * 0.08})`;
+
+}
+
+
+/* =====================================================
+   RELEASE
+===================================================== */
+
+function releaseDrag() {
+
+    if (!dragging) return;
+
+    dragging = false;
+
+
+    const maxDistance =
+        slider.offsetWidth * 0.67;
+
+
+    const progress =
+        distance / maxDistance;
+
+
+    if (progress >= 0.75) {
+
+        openNextPage();
+
+    }
+
+    else {
+
+        dragButton.style.transition =
+            "transform 0.45s cubic-bezier(.2,.8,.2,1)";
+
+        dragButton.style.transform =
+            "translate(0px, -50%)";
+
+
+        heart.style.transform =
+            "scale(1)";
+
+
+        instruction.style.opacity =
+            "1";
+
+
+        distance = 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   OPEN PAGE 2
+===================================================== */
+
+function openNextPage() {
+
+    instruction.innerHTML =
+        "opening your surprise...";
+
+
+    instruction.style.opacity =
+        "1";
+
+
+    heart.style.transform =
+        "scale(1.1)";
+
+
+    setTimeout(() => {
+
+        transition.classList.add("active");
+
+    }, 300);
+
+
+    setTimeout(() => {
+
+        window.location.href =
+            "page2.html";
+
+    }, 1600);
+
+}
+
+
+/* =====================================================
+   MOUSE
+===================================================== */
+
+dragButton.addEventListener(
+    "mousedown",
+    startDrag
+);
+
+document.addEventListener(
+    "mousemove",
+    moveDrag
+);
+
+document.addEventListener(
+    "mouseup",
+    releaseDrag
+);
+
+
+/* =====================================================
+   TOUCH
+===================================================== */
+
+dragButton.addEventListener(
+    "touchstart",
+    startDrag,
+    { passive: false }
+);
+
+document.addEventListener(
+    "touchmove",
+    moveDrag,
+    { passive: false }
+);
+
+document.addEventListener(
+    "touchend",
+    releaseDrag
+);
+
+</script>
+
+</body>
+</html>

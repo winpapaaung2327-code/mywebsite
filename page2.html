@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love 🎂</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center, #650b18 0%, #28030b 48%, #090106 100%);
+
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+}
+
+/* Background glow */
+.glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 30, 70, 0.12);
+
+    filter: blur(90px);
+
+    animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%,100% {
+        transform: scale(.9);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: .9;
+    }
+}
+
+/* Main */
+.container {
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+
+    width: 100%;
+    padding: 20px;
+}
+
+/* Text */
+.top-text {
+    font-size: 20px;
+
+    letter-spacing: 5px;
+
+    color: #f7b7c1;
+
+    margin-bottom: 12px;
+
+    animation: fadeDown 1.5s ease forwards;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 80px);
+
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        0 0 15px rgba(255, 60, 90, .7),
+        0 0 40px rgba(255, 30, 60, .4);
+
+    animation: fadeDown 1.8s ease forwards;
+}
+
+.subtitle {
+    font-size: 23px;
+
+    color: #ffd8de;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 2s ease forwards;
+}
+
+/* Cake */
+.cake-area {
+    position: relative;
+
+    width: 330px;
+    height: 310px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Cake plate */
+.plate {
+    position: absolute;
+
+    bottom: 8px;
+
+    width: 300px;
+    height: 25px;
+
+    background: linear-gradient(
+        to bottom,
+        #f5d9dc,
+        #b97984
+    );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.5),
+        0 0 25px rgba(255,100,120,.3);
+
+    opacity: 0;
+
+    animation: cakeAppear .7s ease forwards;
+    animation-delay: .1s;
+}
+
+/* Bottom cake layer */
+.cake-bottom {
+    position: absolute;
+
+    bottom: 30px;
+
+    width: 250px;
+    height: 75px;
+
+    border-radius: 15px 15px 25px 25px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #a91d35,
+            #7a0d20
+        );
+
+    box-shadow:
+        inset 0 10px 15px rgba(255,255,255,.15),
+        inset 0 -12px 15px rgba(40,0,10,.4),
+        0 10px 20px rgba(0,0,0,.4);
+
+    opacity: 0;
+
+    animation: cakeAppear .8s ease forwards;
+
+    animation-delay: .3s;
+}
+
+/* Middle cake layer */
+.cake-middle {
+    position: absolute;
+
+    bottom: 95px;
+
+    width: 215px;
+    height: 65px;
+
+    border-radius: 13px 13px 20px 20px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #d63b55,
+            #97152c
+        );
+
+    box-shadow:
+        inset 0 8px 12px rgba(255,255,255,.18),
+        inset 0 -10px 15px rgba(50,0,10,.4);
+
+    opacity: 0;
+
+    animation: cakeAppear .8s ease forwards;
+
+    animation-delay: 1s;
+}
+
+/* Top cake layer */
+.cake-top {
+    position: absolute;
+
+    bottom: 160px;
+
+    width: 180px;
+    height: 55px;
+
+    border-radius: 12px 12px 18px 18px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ef7185,
+            #bd2842
+        );
+
+    box-shadow:
+        inset 0 8px 12px rgba(255,255,255,.2),
+        inset 0 -10px 15px rgba(50,0,10,.3);
+
+    opacity: 0;
+
+    animation: cakeAppear .8s ease forwards;
+
+    animation-delay: 1.7s;
+}
+
+/* Cream */
+.cream {
+    position: absolute;
+
+    bottom: 205px;
+
+    width: 190px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #fff2f3;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.25);
+
+    opacity: 0;
+
+    animation: creamAppear .6s ease forwards;
+
+    animation-delay: 2.25s;
+}
+
+/* Candles */
+.candles {
+    position: absolute;
+
+    bottom: 225px;
+
+    display: flex;
+
+    gap: 25px;
+
+    opacity: 0;
+
+    animation: candlesAppear .7s ease forwards;
+
+    animation-delay: 2.9s;
+}
+
+.candle {
+    position: relative;
+
+    width: 14px;
+    height: 55px;
+
+    border-radius: 4px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #fff,
+            #fff 5px,
+            #d72d48 5px,
+            #d72d48 10px
+        );
+
+    box-shadow:
+        0 4px 8px rgba(0,0,0,.3);
+}
+
+/* Flame */
+.flame {
+    position: absolute;
+
+    top: -25px;
+    left: 50%;
+
+    width: 15px;
+    height: 23px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            #fff 0%,
+            #ffd166 35%,
+            #ff7b00 65%,
+            transparent 70%
+        );
+
+    border-radius: 50% 50% 50% 50%;
+
+    filter: drop-shadow(0 0 8px #ff8c00);
+
+    animation: flame 0.7s ease-in-out infinite alternate;
+
+    opacity: 0;
+
+    animation-delay: 3.45s;
+}
+
+/* Make flame visible after delay */
+.candle:nth-child(1) .flame {
+    animation-delay: 3.45s;
+}
+
+.candle:nth-child(2) .flame {
+    animation-delay: 3.55s;
+}
+
+.candle:nth-child(3) .flame {
+    animation-delay: 3.65s;
+}
+
+@keyframes flame {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(.7);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.1) rotate(3deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(.95) rotate(-3deg);
+    }
+}
+
+@keyframes cakeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes creamAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes candlesAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button */
+.next-button {
+    margin-top: 20px;
+
+    padding: 14px 30px;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    border-radius: 30px;
+
+    background: rgba(130,0,30,.5);
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    animation: buttonAppear 1s ease forwards;
+
+    animation-delay: 4.3s;
+
+    transition: .3s;
+}
+
+.next-button:hover {
+    transform: scale(1.08);
+
+    background: rgba(180,0,40,.7);
+
+    box-shadow: 0 0 20px rgba(255,50,80,.4);
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating hearts */
+.floating-heart {
+    position: absolute;
+
+    color: rgba(255,100,130,.6);
+
+    font-size: 20px;
+
+    animation: floating linear infinite;
+
+    pointer-events: none;
+}
+
+@keyframes floating {
+    from {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Music button */
+.music-button {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 20;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    background: rgba(80,0,20,.7);
+
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media(max-width:600px) {
+
+    .cake-area {
+        transform: scale(.78);
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+
+    .top-text {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- Floating hearts -->
+
+<div class="floating-heart" style="left:5%;animation-duration:10s;">♡</div>
+<div class="floating-heart" style="left:15%;animation-duration:13s;animation-delay:2s;">♥</div>
+<div class="floating-heart" style="left:28%;animation-duration:11s;animation-delay:4s;">♡</div>
+<div class="floating-heart" style="left:42%;animation-duration:14s;animation-delay:1s;">♥</div>
+<div class="floating-heart" style="left:60%;animation-duration:12s;animation-delay:3s;">♡</div>
+<div class="floating-heart" style="left:75%;animation-duration:10s;animation-delay:5s;">♥</div>
+<div class="floating-heart" style="left:90%;animation-duration:13s;animation-delay:2s;">♡</div>
+
+
+<div class="container">
+
+    <div class="top-text">
+        Today is your special day
+    </div>
+
+    <h1>
+        Happy Birthday
+    </h1>
+
+    <div class="subtitle">
+        my love ♡
+    </div>
+
+
+    <!-- CAKE -->
+
+    <div class="cake-area">
+
+        <div class="plate"></div>
+
+        <div class="cake-bottom"></div>
+
+        <div class="cake-middle"></div>
+
+        <div class="cake-top"></div>
+
+        <div class="cream"></div>
+
+
+        <div class="candles">
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next-button"
+        onclick="goToPage3()">
+
+        A little letter for you ♡
+
+    </button>
+
+</div>
+
+
+<!-- Music button -->
+
+<button
+    class="music-button"
+    id="musicButton"
+    onclick="toggleMusic(event)">
+
+    ♫
+
+</button>
+
+
+<script>
+
+/* ================================
+   MUSIC
+================================ */
+
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+
+/* Restore position from Page 1 */
+
+const savedTime = localStorage.getItem("musicTime");
+
+if (savedTime) {
+
+    music.currentTime = parseFloat(savedTime);
+
+}
+
+
+/* Try to continue music */
+
+window.addEventListener("load", () => {
+
+    music.play()
+        .then(() => {
+
+            musicButton.innerHTML = "♫";
+
+        })
+        .catch(() => {
+
+            /*
+            Chrome may block playback
+            because Page 2 was opened
+            without a new user gesture.
+            */
+
+            musicButton.innerHTML = "🔇";
+
+        });
+
+});
+
+
+/* Save music position */
+
+setInterval(() => {
+
+    if (!music.paused) {
+
+        localStorage.setItem(
+            "musicTime",
+            music.currentTime
+        );
+
+    }
+
+}, 1000);
+
+
+/* Music button */
+
+function toggleMusic(event) {
+
+    event.stopPropagation();
+
+    if (music.paused) {
+
+        music.play()
+            .then(() => {
+
+                musicButton.innerHTML = "♫";
+
+            });
+
+    } else {
+
+        music.pause();
+
+        localStorage.setItem(
+            "musicTime",
+            music.currentTime
+        );
+
+        musicButton.innerHTML = "🔇";
+
+    }
+
+}
+
+
+/* ================================
+   GO TO PAGE 3
+================================ */
+
+function goToPage3() {
+
+    /* Save current music position */
+
+    localStorage.setItem(
+        "musicTime",
+        music.currentTime
+    );
+
+    window.location.href = "page3.html";
+
+}
+
+
+/* Save before leaving */
+
+window.addEventListener("pagehide", () => {
+
+    if (!music.paused) {
+
+        localStorage.setItem(
+            "musicTime",
+            music.currentTime
+        );
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Letter For You ❤️</title>
+
+    <style>
+
+        /* ==============================
+           RESET
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ==============================
+           BODY
+        ============================== */
+
+        body {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff7f2,
+                    #fce9e4,
+                    #fffaf7
+                );
+
+            color: #4a2025;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            overflow-x: hidden;
+
+            transition: opacity 1s ease;
+        }
+
+
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+
+            padding: 50px 25px 90px;
+
+            text-align: center;
+
+            animation:
+                pageAppear 1.5s ease forwards;
+        }
+
+
+        /* ==============================
+           SMALL TITLE
+        ============================== */
+
+        .small-title {
+            font-size: 15px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            color: #a45b65;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* ==============================
+           MAIN TITLE
+        ============================== */
+
+        h1 {
+            font-size:
+                clamp(42px, 7vw, 68px);
+
+            font-weight: normal;
+
+            color: #7b2635;
+
+            margin-bottom: 35px;
+
+            text-shadow:
+                0 5px 15px rgba(123, 38, 53, .15);
+        }
+
+
+        /* ==============================
+           LETTER CARD
+        ============================== */
+
+        .letter-card {
+
+            position: relative;
+
+            max-width: 760px;
+
+            margin: auto;
+
+            padding:
+                50px
+                clamp(25px, 6vw, 65px);
+
+            background:
+                rgba(255,255,255,.78);
+
+            border:
+                1px solid rgba(155, 82, 94, .18);
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 25px 60px
+                rgba(88, 35, 45, .14);
+
+            text-align: left;
+
+            line-height: 1.9;
+
+            backdrop-filter: blur(8px);
+
+            animation:
+                letterAppear 1.7s ease forwards;
+        }
+
+
+        /* ==============================
+           DECORATIVE CORNERS
+        ============================== */
+
+        .letter-card::before {
+
+            content: "♡";
+
+            position: absolute;
+
+            top: 15px;
+            left: 22px;
+
+            font-size: 24px;
+
+            color: #c56b78;
+
+            opacity: .6;
+        }
+
+
+        .letter-card::after {
+
+            content: "♡";
+
+            position: absolute;
+
+            bottom: 15px;
+            right: 22px;
+
+            font-size: 24px;
+
+            color: #c56b78;
+
+            opacity: .6;
+        }
+
+
+        /* ==============================
+           LETTER GREETING
+        ============================== */
+
+        .greeting {
+
+            font-size: 25px;
+
+            color: #7b2635;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ==============================
+           LETTER TEXT
+        ============================== */
+
+        .letter-card p {
+
+            font-size: 17px;
+
+            color: #5b353b;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* ==============================
+           SPECIAL TEXT
+        ============================== */
+
+        .special {
+
+            color: #9b394d;
+
+            font-size: 19px;
+
+            font-style: italic;
+        }
+
+
+        /* ==============================
+           SIGNATURE
+        ============================== */
+
+        .signature {
+
+            margin-top: 35px;
+
+            text-align: right;
+
+            color: #7b2635;
+
+            font-size: 20px;
+
+            line-height: 1.7;
+        }
+
+
+        .signature span {
+
+            font-size: 25px;
+
+            font-style: italic;
+        }
+
+
+        /* ==============================
+           NEXT BUTTON
+        ============================== */
+
+        .next-button {
+
+            margin-top: 38px;
+
+            padding:
+                15px 30px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background:
+                #7b2635;
+
+            color: white;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 16px;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(123, 38, 53, .25);
+
+            transition:
+                .3s ease;
+        }
+
+
+        .next-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            background:
+                #9b394d;
+
+            box-shadow:
+                0 15px 30px
+                rgba(123, 38, 53, .3);
+        }
+
+
+        /* ==============================
+           MUSIC BUTTON
+        ============================== */
+
+        .music-button {
+
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            z-index: 50;
+
+            width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(123, 38, 53, .25);
+
+            background:
+                rgba(255,255,255,.85);
+
+            color: #7b2635;
+
+            font-size: 21px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px
+                rgba(90, 30, 40, .15);
+
+            backdrop-filter:
+                blur(10px);
+
+            transition: .3s;
+        }
+
+
+        .music-button:hover {
+
+            transform:
+                scale(1.1);
+
+            box-shadow:
+                0 10px 30px
+                rgba(123,38,53,.25);
+        }
+
+
+        /* ==============================
+           FLOATING HEARTS
+        ============================== */
+
+        .floating-heart {
+
+            position: fixed;
+
+            bottom: -40px;
+
+            color:
+                rgba(155, 57, 77, .25);
+
+            font-size: 22px;
+
+            pointer-events: none;
+
+            animation:
+                floatUp linear infinite;
+        }
+
+
+        @keyframes floatUp {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            85% {
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-115vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* ==============================
+           ANIMATIONS
+        ============================== */
+
+        @keyframes pageAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes letterAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(35px)
+                    scale(.97);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* ==============================
+           PAGE EXIT
+        ============================== */
+
+        .fade-out {
+
+            opacity: 0;
+
+            transform:
+                translateY(-15px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                padding:
+                    40px 18px 90px;
+            }
+
+
+            h1 {
+
+                font-size: 42px;
+
+                margin-bottom: 28px;
+            }
+
+
+            .letter-card {
+
+                padding:
+                    40px 25px;
+            }
+
+
+            .greeting {
+
+                font-size: 22px;
+            }
+
+
+            .letter-card p {
+
+                font-size: 16px;
+
+                line-height: 1.8;
+            }
+
+
+            .special {
+
+                font-size: 17px;
+            }
+
+
+            .signature {
+
+                font-size: 18px;
+            }
+
+
+            .music-button {
+
+                width: 46px;
+                height: 46px;
+
+                right: 18px;
+                bottom: 18px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         BACKGROUND MUSIC
+    ================================== -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto">
+
+        <source
+            src="music.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- =================================
+         FLOATING HEARTS
+    ================================== -->
+
+    <div
+        class="floating-heart"
+        style="
+            left: 8%;
+            animation-duration: 10s;
+            animation-delay: 0s;
+        ">
+        ♡
+    </div>
+
+
+    <div
+        class="floating-heart"
+        style="
+            left: 22%;
+            animation-duration: 13s;
+            animation-delay: 3s;
+        ">
+        ♥
+    </div>
+
+
+    <div
+        class="floating-heart"
+        style="
+            left: 40%;
+            animation-duration: 11s;
+            animation-delay: 1s;
+        ">
+        ♡
+    </div>
+
+
+    <div
+        class="floating-heart"
+        style="
+            left: 58%;
+            animation-duration: 14s;
+            animation-delay: 5s;
+        ">
+        ♥
+    </div>
+
+
+    <div
+        class="floating-heart"
+        style="
+            left: 76%;
+            animation-duration: 12s;
+            animation-delay: 2s;
+        ">
+        ♡
+    </div>
+
+
+    <div
+        class="floating-heart"
+        style="
+            left: 90%;
+            animation-duration: 10s;
+            animation-delay: 4s;
+        ">
+        ♥
+    </div>
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================== -->
+
+    <main
+        class="container"
+        id="mainContent">
+
+
+        <div class="small-title">
+            A little letter
+        </div>
+
+
+        <h1>
+            Just For You ♡
+        </h1>
+
+
+        <div class="letter-card">
+
+
+            <div class="greeting">
+                My Love,
+            </div>
+
+
+            <p>
+                Happy Birthday to the person who makes
+                my world feel a little brighter every day.
+            </p>
+
+
+            <p>
+                I don't know if words will ever be enough
+                to explain how much you mean to me, but
+                today I just want you to know how special
+                you are to me.
+            </p>
+
+
+            <p>
+                Thank you for every smile, every little
+                moment, every conversation, and every
+                memory we have created together.
+            </p>
+
+
+            <p class="special">
+                You are one of the most beautiful parts
+                of my life, and I hope I can keep making
+                beautiful memories with you.
+            </p>
+
+
+            <p>
+                On your special day, I wish you happiness,
+                success, peace, and everything your heart
+                wishes for.
+            </p>
+
+
+            <p>
+                And no matter how much time passes,
+                I hope you always remember that there
+                is someone here who cares about you,
+                believes in you, and loves you so much.
+            </p>
+
+
+            <div class="signature">
+
+                Always yours, ♡
+                <br>
+
+                <span>
+                    With all my love
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NEXT PAGE -->
+
+        <button
+            class="next-button"
+            onclick="goToPage4()">
+
+            Our Story ♡
+
+        </button>
+
+
+    </main>
+
+
+    <!-- =================================
+         MUSIC BUTTON
+    ================================== -->
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="toggleMusic(event)"
+        aria-label="Toggle music">
+
+        ♫
+
+    </button>
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        /* =================================
+           MUSIC
+        ================================== */
+
+        const music =
+            document.getElementById("bgMusic");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+
+        /* =================================
+           RESTORE PREVIOUS MUSIC POSITION
+        ================================= */
+
+        const savedTime =
+            localStorage.getItem("musicTime");
+
+
+        if (savedTime) {
+
+            music.addEventListener(
+                "loadedmetadata",
+                function() {
+
+                    try {
+
+                        music.currentTime =
+                            parseFloat(savedTime);
+
+                    } catch (error) {
+
+                        console.log(
+                            "Could not restore music position."
+                        );
+
+                    }
+
+                },
+                { once: true }
+            );
+
+        }
+
+
+        /* =================================
+           SAVE MUSIC POSITION
+        ================================= */
+
+        setInterval(() => {
+
+            if (!music.paused) {
+
+                localStorage.setItem(
+                    "musicTime",
+                    music.currentTime
+                );
+
+            }
+
+        }, 1000);
+
+
+        /* =================================
+           START MUSIC
+        ================================= */
+
+        function startMusic() {
+
+            music.play()
+
+                .then(() => {
+
+                    musicButton.innerHTML =
+                        "♫";
+
+                })
+
+                .catch(() => {
+
+                    /*
+                     Browser may block autoplay.
+                     User can press the music button.
+                    */
+
+                    musicButton.innerHTML =
+                        "🔇";
+
+                });
+
+        }
+
+
+        /* =================================
+           TOGGLE MUSIC
+        ================================= */
+
+        function toggleMusic(event) {
+
+            if (event) {
+
+                event.stopPropagation();
+
+            }
+
+
+            if (music.paused) {
+
+                startMusic();
+
+            } else {
+
+                music.pause();
+
+                localStorage.setItem(
+                    "musicTime",
+                    music.currentTime
+                );
+
+                musicButton.innerHTML =
+                    "🔇";
+            }
+
+        }
+
+
+        /* =================================
+           TRY TO CONTINUE MUSIC
+        ================================= */
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                /*
+                   Browser autoplay rules may
+                   prevent this from working.
+
+                   If blocked, press ♫.
+                */
+
+                startMusic();
+
+            }
+        );
+
+
+        /* =================================
+           GO TO PAGE 4
+        ================================= */
+
+        function goToPage4() {
+
+
+            /* Save current music position */
+
+            localStorage.setItem(
+                "musicTime",
+                music.currentTime
+            );
+
+
+            /* Fade page */
+
+            document
+                .getElementById("mainContent")
+                .classList.add("fade-out");
+
+
+            /* Open Page 4 */
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "page4.html";
+
+            }, 1000);
+
+        }
+
+
+        /* =================================
+           SAVE WHEN LEAVING
+        ================================= */
+
+        window.addEventListener(
+            "pagehide",
+            function() {
+
+                if (!music.paused) {
+
+                    localStorage.setItem(
+                        "musicTime",
+                        music.currentTime
+                    );
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+</body>
+</html>

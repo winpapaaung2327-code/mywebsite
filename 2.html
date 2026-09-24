@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background: #19040a;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.page {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            #681a2a 0%,
+            #480e1c 32%,
+            #2b0712 65%,
+            #150208 100%
+        );
+
+    color: white;
+}
+
+
+/* =====================================================
+   SOFT BACKGROUND LIGHT
+===================================================== */
+
+.glow {
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: 52%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 190, 170, .17) 0%,
+            rgba(190, 45, 70, .08) 38%,
+            transparent 72%
+        );
+
+    filter: blur(25px);
+
+    animation:
+        breathing 5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   TOP TEXT
+===================================================== */
+
+.small-title {
+
+    position: absolute;
+
+    top: 7%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 30;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(14px, 1.5vw, 19px);
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 225, 218, .75);
+
+    opacity: 0;
+
+    animation:
+        fadeDown 1.2s ease 0.5s forwards;
+}
+
+
+/* =====================================================
+   HAPPY BIRTHDAY
+===================================================== */
+
+.birthday-title {
+
+    position: absolute;
+
+    top: 13%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 30;
+
+}
+
+
+.happy {
+
+    display: block;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(60px, 8vw, 100px);
+
+    line-height: 1;
+
+    color: #fff8f1;
+
+    text-shadow:
+        0 5px 25px rgba(0,0,0,.25);
+
+    opacity: 0;
+
+    animation:
+        titleReveal 1.5s ease .8s forwards;
+}
+
+
+.birthday {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(24px, 3vw, 40px);
+
+    letter-spacing: 9px;
+
+    text-transform: uppercase;
+
+    color: #f4d4cd;
+
+    opacity: 0;
+
+    animation:
+        birthdayReveal 1.4s ease 1.5s forwards;
+}
+
+
+/* =====================================================
+   MY LOVE
+===================================================== */
+
+.my-love {
+
+    position: absolute;
+
+    top: 32%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 30;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(35px, 4.5vw, 58px);
+
+    color: #efb5b2;
+
+    opacity: 0;
+
+    animation:
+        loveReveal 1.3s ease 2s forwards;
+}
+
+
+/* =====================================================
+   CAKE AREA
+===================================================== */
+
+.cake-area {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 10%;
+
+    transform:
+        translateX(-50%);
+
+    width: 330px;
+
+    height: 280px;
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   CAKE GLOW
+===================================================== */
+
+.cake-glow {
+
+    position: absolute;
+
+    width: 270px;
+    height: 100px;
+
+    left: 50%;
+    bottom: 5px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 70, 90, .24);
+
+    filter: blur(35px);
+
+    opacity: 0;
+
+    animation:
+        glowAppear 1s ease 1.8s forwards,
+        cakeGlow 3s ease-in-out 2.8s infinite;
+}
+
+
+/* =====================================================
+   CAKE SHADOW
+===================================================== */
+
+.cake-shadow {
+
+    position: absolute;
+
+    width: 230px;
+    height: 25px;
+
+    left: 50%;
+    bottom: 18px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.32);
+
+    filter: blur(8px);
+
+    opacity: 0;
+
+    animation:
+        shadowAppear .8s ease .2s forwards;
+}
+
+
+/* =====================================================
+   CAKE BASE
+===================================================== */
+
+.cake {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 30px;
+
+    transform:
+        translateX(-50%);
+
+    width: 210px;
+
+    height: 105px;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   BOTTOM CAKE LAYER
+===================================================== */
+
+.cake-bottom {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 210px;
+
+    height: 60px;
+
+    border-radius:
+        8px 8px 20px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #d9787f 0%,
+            #b74456 45%,
+            #7c1d31 100%
+        );
+
+    box-shadow:
+        inset 0 7px 10px
+        rgba(255,255,255,.18),
+
+        0 12px 18px
+        rgba(0,0,0,.25);
+
+    opacity: 0;
+
+    transform:
+        translateY(30px)
+        scale(.92);
+
+    animation:
+        layerOne
+        .75s
+        cubic-bezier(.2,.8,.2,1)
+        .3s forwards;
+}
+
+
+/* =====================================================
+   MIDDLE CAKE LAYER
+===================================================== */
+
+.cake-middle {
+
+    position: absolute;
+
+    left: 10px;
+
+    bottom: 45px;
+
+    width: 190px;
+
+    height: 50px;
+
+    border-radius:
+        8px 8px 15px 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eaa0a0 0%,
+            #ca5b6b 50%,
+            #9c2941 100%
+        );
+
+    box-shadow:
+        inset 0 6px 8px
+        rgba(255,255,255,.2),
+
+        0 7px 12px
+        rgba(0,0,0,.18);
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    animation:
+        layerTwo
+        .7s
+        cubic-bezier(.2,.8,.2,1)
+        1s forwards;
+}
+
+
+/* =====================================================
+   TOP OF CAKE
+===================================================== */
+
+.cake-top {
+
+    position: absolute;
+
+    left: 10px;
+
+    bottom: 80px;
+
+    width: 190px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 35%,
+            #fff4ed 0%,
+            #f1c1b8 42%,
+            #c75b68 100%
+        );
+
+    box-shadow:
+        inset 0 -6px 8px
+        rgba(120,0,20,.18),
+
+        0 4px 8px
+        rgba(0,0,0,.15);
+
+    opacity: 0;
+
+    transform:
+        translateY(20px)
+        scale(.95);
+
+    animation:
+        layerThree
+        .7s
+        cubic-bezier(.2,.8,.2,1)
+        1.7s forwards;
+}
+
+
+/* =====================================================
+   CREAM DRIPS
+===================================================== */
+
+.cream {
+
+    position: absolute;
+
+    left: 16px;
+
+    bottom: 66px;
+
+    width: 178px;
+
+    height: 38px;
+
+    z-index: 8;
+
+    opacity: 0;
+
+    animation:
+        creamAppear
+        .7s
+        ease
+        2.25s
+        forwards;
+}
+
+
+.cream-line {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff9f2,
+            #f2c9c0
+        );
+
+    box-shadow:
+        0 4px 7px
+        rgba(80,0,15,.12);
+}
+
+
+.drip {
+
+    position: absolute;
+
+    top: 12px;
+
+    width: 15px;
+
+    height: 22px;
+
+    border-radius:
+        0 0 12px 12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8ddd5,
+            #d99491
+        );
+}
+
+
+.drip:nth-child(2) {
+    left: 30px;
+}
+
+.drip:nth-child(3) {
+    left: 75px;
+    height: 30px;
+}
+
+.drip:nth-child(4) {
+    right: 32px;
+    height: 19px;
+}
+
+
+/* =====================================================
+   CANDLES
+===================================================== */
+
+.candles {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 102px;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 25px;
+
+    z-index: 15;
+
+    opacity: 0;
+
+    animation:
+        candlesAppear
+        .8s
+        cubic-bezier(.2,.8,.2,1)
+        2.9s
+        forwards;
+}
+
+
+.candle {
+
+    position: relative;
+
+    width: 11px;
+
+    height: 52px;
+
+    border-radius: 5px;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #a82e45 0px,
+            #a82e45 5px,
+            #f4c4ba 5px,
+            #f4c4ba 10px
+        );
+
+    box-shadow:
+        0 4px 7px
+        rgba(0,0,0,.25);
+}
+
+
+/* =====================================================
+   CANDLE FLAME
+===================================================== */
+
+.flame {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -25px;
+
+    width: 16px;
+
+    height: 23px;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    border-radius:
+        50% 0 50% 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffde0,
+            #ffc04f 50%,
+            #e64743 100%
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(255,155,70,.9);
+
+    opacity: 0;
+
+    animation:
+        flameAppear
+        .5s
+        ease
+        3.45s
+        forwards,
+
+        flameMove
+        .8s
+        ease-in-out
+        3.9s
+        infinite alternate;
+}
+
+
+.candle:nth-child(2) .flame {
+    animation-delay:
+        3.55s,
+        4s;
+}
+
+.candle:nth-child(3) .flame {
+    animation-delay:
+        3.65s,
+        4.1s;
+}
+
+
+/* =====================================================
+   CANDLE LIGHT
+===================================================== */
+
+.candle-light {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 155px;
+
+    width: 160px;
+
+    height: 100px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,190,110,.18),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    opacity: 0;
+
+    animation:
+        lightAppear
+        1s
+        ease
+        3.6s
+        forwards,
+
+        lightPulse
+        2s
+        ease-in-out
+        4.5s
+        infinite;
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart {
+
+    position: absolute;
+
+    color: #e65c70;
+
+    text-shadow:
+        0 0 15px
+        rgba(255,70,100,.7);
+
+    opacity: 0;
+
+    animation:
+        floatHeart
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+.h1 {
+    left: 10%;
+    bottom: -30px;
+    font-size: 24px;
+}
+
+.h2 {
+    left: 25%;
+    bottom: -30px;
+    font-size: 16px;
+    animation-delay: 1.5s;
+}
+
+.h3 {
+    left: 38%;
+    bottom: -30px;
+    font-size: 28px;
+    animation-delay: 3s;
+}
+
+.h4 {
+    right: 12%;
+    bottom: -30px;
+    font-size: 23px;
+    animation-delay: .7s;
+}
+
+.h5 {
+    right: 27%;
+    bottom: -30px;
+    font-size: 16px;
+    animation-delay: 2s;
+}
+
+.h6 {
+    right: 38%;
+    bottom: -30px;
+    font-size: 27px;
+    animation-delay: 3.5s;
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkle {
+
+    position: absolute;
+
+    color: #ffe8df;
+
+    opacity: 0;
+
+    animation:
+        sparkle
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+.s1 {
+    left: 17%;
+    top: 26%;
+}
+
+.s2 {
+    right: 18%;
+    top: 28%;
+    animation-delay: 1s;
+}
+
+.s3 {
+    left: 27%;
+    top: 51%;
+    animation-delay: 1.8s;
+}
+
+.s4 {
+    right: 27%;
+    top: 52%;
+    animation-delay: 2.4s;
+}
+
+.s5 {
+    left: 12%;
+    top: 68%;
+    animation-delay: 1.3s;
+}
+
+.s6 {
+    right: 12%;
+    top: 68%;
+    animation-delay: 2.2s;
+}
+
+
+/* =====================================================
+   BOTTOM MESSAGE
+===================================================== */
+
+.bottom-message {
+
+    position: absolute;
+
+    bottom: 4.5%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 30;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 15px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,225,218,.7);
+
+    opacity: 0;
+
+    animation:
+        fadeUp 1.3s ease 4.2s forwards;
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-page {
+
+    position: absolute;
+
+    right: 4%;
+
+    bottom: 4%;
+
+    z-index: 40;
+
+    padding: 10px 20px;
+
+    border:
+        1px solid
+        rgba(255,205,200,.3);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: #f5d5cf;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        fadeButton
+        1s
+        ease
+        4.8s
+        forwards;
+
+    transition: .3s;
+}
+
+
+.next-page:hover {
+
+    background: #a83248;
+
+    color: white;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(180,40,60,.3);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes breathing {
+
+    0%,100% {
+        transform:
+            translate(-50%,-50%)
+            scale(.9);
+
+        opacity: .5;
+    }
+
+    50% {
+        transform:
+            translate(-50%,-50%)
+            scale(1.1);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%,-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%,0);
+    }
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes birthdayReveal {
+
+    from {
+        opacity: 0;
+        letter-spacing: 20px;
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: 9px;
+    }
+}
+
+
+@keyframes loveReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%,20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%,0);
+    }
+}
+
+
+/* Cake animations */
+
+@keyframes shadowAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+}
+
+
+@keyframes layerOne {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes layerTwo {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes layerThree {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes creamAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(12px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes candlesAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            translateY(25px)
+            scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes flameAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            rotate(45deg)
+            scale(.4);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            rotate(45deg)
+            scale(1);
+    }
+}
+
+
+@keyframes flameMove {
+
+    from {
+        transform:
+            translateX(-50%)
+            rotate(40deg)
+            scale(.9);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            rotate(50deg)
+            scale(1.1);
+    }
+}
+
+
+@keyframes glowAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes cakeGlow {
+
+    0%,100% {
+        transform:
+            translateX(-50%)
+            scale(.9);
+
+        opacity: .4;
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.1);
+
+        opacity: .75;
+    }
+}
+
+
+@keyframes lightAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes lightPulse {
+
+    0%,100% {
+        transform:
+            translateX(-50%)
+            scale(.9);
+
+        opacity: .5;
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.15);
+
+        opacity: .9;
+    }
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(0)
+            scale(.7);
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    70% {
+        opacity: .45;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-110vh)
+            scale(1.2)
+            rotate(25deg);
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: 0;
+        transform:
+            scale(.5)
+            rotate(0);
+    }
+
+    50% {
+        opacity: .85;
+        transform:
+            scale(1.2)
+            rotate(90deg);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%,15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%,0);
+    }
+}
+
+
+@keyframes fadeButton {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .small-title {
+        top: 5%;
+        letter-spacing: 3px;
+    }
+
+    .birthday-title {
+        top: 11%;
+    }
+
+    .happy {
+        font-size: 58px;
+    }
+
+    .birthday {
+        font-size: 21px;
+        letter-spacing: 5px;
+    }
+
+    .my-love {
+        top: 29%;
+        font-size: 42px;
+    }
+
+    .cake-area {
+        bottom: 12%;
+        transform:
+            translateX(-50%)
+            scale(.82);
+    }
+
+    .bottom-message {
+        bottom: 4%;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .next-page {
+        right: 50%;
+        bottom: 1%;
+        transform:
+            translateX(50%);
+        font-size: 11px;
+        padding: 7px 15px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- BACKGROUND GLOW -->
+
+    <div class="glow"></div>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="heart h1">♥</div>
+    <div class="heart h2">♡</div>
+    <div class="heart h3">♥</div>
+    <div class="heart h4">♡</div>
+    <div class="heart h5">♥</div>
+    <div class="heart h6">♡</div>
+
+
+    <!-- SPARKLES -->
+
+    <div class="sparkle s1">✦</div>
+    <div class="sparkle s2">✧</div>
+    <div class="sparkle s3">✦</div>
+    <div class="sparkle s4">✧</div>
+    <div class="sparkle s5">✦</div>
+    <div class="sparkle s6">✧</div>
+
+
+    <!-- TOP TEXT -->
+
+    <div class="small-title">
+        a little celebration for you
+    </div>
+
+
+    <!-- MAIN TITLE -->
+
+    <div class="birthday-title">
+
+        <span class="happy">
+            Happy Birthday
+        </span>
+
+        <span class="birthday">
+            my love
+        </span>
+
+    </div>
+
+
+    <!-- ROMANTIC TEXT -->
+
+    <div class="my-love">
+        to my favorite person ♡
+    </div>
+
+
+    <!-- =================================================
+         CAKE
+    ================================================== -->
+
+    <div class="cake-area">
+
+
+        <!-- Glow -->
+
+        <div class="cake-glow"></div>
+
+
+        <!-- Shadow -->
+
+        <div class="cake-shadow"></div>
+
+
+        <!-- Candle Light -->
+
+        <div class="candle-light"></div>
+
+
+        <!-- Cake -->
+
+        <div class="cake">
+
+
+            <!-- FIRST / BOTTOM LAYER -->
+
+            <div class="cake-bottom"></div>
+
+
+            <!-- SECOND / MIDDLE LAYER -->
+
+            <div class="cake-middle"></div>
+
+
+            <!-- THIRD / TOP LAYER -->
+
+            <div class="cake-top"></div>
+
+
+            <!-- CREAM -->
+
+            <div class="cream">
+
+                <div class="cream-line"></div>
+
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+
+            </div>
+
+
+            <!-- CANDLES -->
+
+            <div class="candles">
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM MESSAGE -->
+
+    <div class="bottom-message">
+        another beautiful year of you ♡
+    </div>
+
+
+    <!-- NEXT PAGE -->
+
+    <button
+        class="next-page"
+        onclick="goToPage3()"
+    >
+        continue zar ni →
+    </button>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   PAGE 2 → PAGE 3
+===================================================== */
+
+function goToPage3() {
+
+    window.location.href =
+        "page3.html";
+
+}
+
+</script>
+
+
+</body>
+</html>
